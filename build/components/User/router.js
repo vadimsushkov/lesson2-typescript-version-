@@ -1,0 +1,13 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const UserComponent = require("../User");
+const filter_1 = require("../Auth/filter");
+const isLogged = require('../../polices/is-logged');
+const router = express_1.Router();
+router.get('/', [isLogged], filter_1.default(UserComponent.findAll));
+router.get('/:id', [isLogged], filter_1.default(UserComponent.findById));
+router.post('/', [isLogged], filter_1.default(UserComponent.create));
+router.put('/', [isLogged], filter_1.default(UserComponent.updateById));
+router.delete('/', [isLogged], filter_1.default(UserComponent.deleteById));
+exports.default = router;

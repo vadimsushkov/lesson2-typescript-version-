@@ -1,0 +1,13 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const AuthComponent = require("../Auth");
+const express_1 = require("express");
+const filter_1 = require("./filter");
+const router = express_1.Router();
+router.post('/signUp', filter_1.default(AuthComponent.signUp));
+router.post('/signIn', filter_1.default(AuthComponent.signIn));
+router.get('/currentUser', filter_1.default(AuthComponent.currentUser));
+router.post('/refreshToken', filter_1.default(AuthComponent.refresh));
+router.delete('/signOut', filter_1.default(AuthComponent.signOut));
+router.delete('/signOutAll', AuthComponent.signOutAll);
+exports.default = router;
