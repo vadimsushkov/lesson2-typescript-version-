@@ -3,7 +3,7 @@ import * as bluebird  from 'bluebird';
 
 bluebird.promisifyAll(redis);
 
-const redisClient = redis.createClient('redis://127.0.0.1:6379');
+const redisClient = redis.createClient('redis://redis:6379');
 
 // if has occured an error then show her in the console as an error
 redisClient.on('error', console.error);

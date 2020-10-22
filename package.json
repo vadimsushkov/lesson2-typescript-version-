@@ -10,7 +10,7 @@
   "scripts": {
     "build": "tsc --skipLibCheck",
     "start": "tsc --skipLibCheck && node ./build/config/server/index.js",
-    "start:dev": "pm2-dev start ecosystem.config.js",
+    "start:dev": "nodemon",
     "start:prod": "pm2 start ecosystem.config.js --env production",
     "ts:watch": "tsc -w",
     "test": "NODE_ENV=test mocha -r ts-node/register test/index.js --exit"
@@ -19,6 +19,7 @@
     "src"
   ],
   "dependencies": {
+    "@hapi/joi": "17.1.1",
     "@types/redis": "2.8.28",
     "bcrypt": "4.0.1",
     "body-parser": "1.19.0",
@@ -33,6 +34,7 @@
     "jsonwebtoken": "8.5.1",
     "mongoose": "5.9.16",
     "oauth2-server": "3.0.1",
+    "pm2": "4.5.0",
     "redis": "3.0.2",
     "ts-node": "8.10.1",
     "util": "0.12.3"

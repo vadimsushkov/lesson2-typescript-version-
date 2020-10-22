@@ -1,7 +1,7 @@
 module.exports = {
   apps : [{
     name: "lesson2",
-    script: './src/server/index.ts',
+    script: './build/server/index.js',
     watch: true,
     ignore_watch: ['node_modules', '.idea'],
     env: {
